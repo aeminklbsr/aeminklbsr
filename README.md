@@ -1,16 +1,22 @@
-## Hi there 👋
+# Merhaba, ben Ahmet Emin Kolbasar 👋
 
-<!--
-**aeminklbsr/aeminklbsr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## 🚀 Hakkımda
+Ben bir **Front-End Developer**'ım. Web teknolojilerine ve kullanıcı odaklı arayüzler geliştirmeye tutkuyla bağlıyım. Özellikle Angular ve modern JavaScript frameworkleriyle çalışmayı seviyorum.
 
-Here are some ideas to get you started:
+## 🛠️ Kullandığım Teknolojiler
+- **Frontend:** HTML5, CSS3, SCSS, JavaScript, TypeScript, Angular, React
+- **UI Framework:** Bootstrap, Tailwind CSS, Material Design
+- **Diğer:** Git, Figma, REST API, WebSocket
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 📈 İlgilendiğim Konular
+- Performans odaklı web uygulamaları
+- Responsive ve mobil uyumlu tasarımlar
+- Yapay zeka destekli frontend çözümleri
+- Progressive Web Apps (PWA)
+
+## 📫 Bana Ulaşın
+- 📧 [E-posta](mailto:aeminkolbasar@gmail.com)
+- 💼 [LinkedIn](https://www.linkedin.com/in/aeminklbsr/)
+- 🌐 [Kişisel Websitem](https://seninsiten.com) (varsa)
+
+---
