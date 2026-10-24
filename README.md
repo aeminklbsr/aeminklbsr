@@ -17,10 +17,6 @@ As part of the university's IT team I develop platforms used by thousands of stu
 
 These live in the university's private repositories; case studies with screenshots are coming to this profile.
 
-## Open source
-
-- `dotnet-mongo-microservice-template` – the N-layer .NET 10 + MongoDB service skeleton behind the platforms above (Testcontainers, Docker, GitHub Actions, Prometheus) – coming soon
-
 ## Contact
 
 [LinkedIn](https://linkedin.com/in/ahmeteminkolbasar) · aeminkolbasar@gmail.com
