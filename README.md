@@ -1,34 +1,26 @@
+# Hi, I'm Emin 👋
 
-<h1 align="center">Merhaba, ben Emin 👋 / Hi, I'm Emin</h1>
+Full-stack developer at Istanbul Atlas University. I build web applications end to end: backend API, admin panel, user-facing app and deployment.
 
-<p align="center">
-  <strong>Full Stack Developer · React · Angular · .NET</strong>
-</p>
+**Stack:** C# / .NET 8-10 · ASP.NET Core · Node.js · React · Angular · TypeScript · MongoDB · Redis · SignalR · Docker · GitHub Actions
 
-### 🇹🇷 Hakkımda
+## What I work on
 
-JavaScript, TypeScript ve .NET ile full stack web uygulamaları geliştiriyorum.
-Ön yüzde React ve Angular; arayüz tasarımında HTML, CSS, Tailwind CSS ve
-Bootstrap kullanıyorum. Kullanıcı arayüzünden sunucu tarafına kadar
-uygulamanın her katmanında çalışmayı seviyorum.
+As part of the university's IT team I develop platforms used by thousands of students and staff every day:
 
-### 🇬🇧 About me
+- Online exam platform with live proctoring (SignalR), lockdown exam screen and official PDF exports
+- E-learning store with 3-D Secure card payments, HLS video streaming and live classes
+- Slack-style enterprise messenger with Redis-backed SignalR and at-rest message encryption
+- Drag-and-drop form builder with 28 field types, conditional logic and analytics
+- IT asset management with transaction-safe assignments and Excel/PDF reporting
+- Learning management system with WebRTC live classrooms, rubrics and gradebook
 
-I build full stack web applications with JavaScript, TypeScript, and .NET.
-On the frontend, I work with React and Angular, using HTML, CSS,
-Tailwind CSS, and Bootstrap to build interfaces.
-I enjoy working across the stack, from the user interface to the backend.
+These live in the university's private repositories; case studies with screenshots are coming to this profile.
 
-### 🛠️ Teknolojiler / Tech Stack
+## Open source
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=js,ts,html,css,react,angular,tailwind,bootstrap,dotnet&perline=9" alt="JavaScript, TypeScript, HTML, CSS, React, Angular, Tailwind CSS, Bootstrap, .NET" />
-</p>
+- `dotnet-mongo-microservice-template` – the N-layer .NET 10 + MongoDB service skeleton behind the platforms above (Testcontainers, Docker, GitHub Actions, Prometheus) – coming soon
 
-### 👾 Katkılarım / My Contributions
+## Contact
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aeminklbsr/aeminklbsr/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aeminklbsr/aeminklbsr/output/pacman-contribution-graph.svg">
-  <img alt="Pac-Man contribution animation" src="https://raw.githubusercontent.com/aeminklbsr/aeminklbsr/output/pacman-contribution-graph.svg">
-</picture>
+[LinkedIn](https://linkedin.com/in/ahmeteminkolbasar) · aeminkolbasar@gmail.com
