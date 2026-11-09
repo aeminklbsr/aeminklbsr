@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repo Muncher (Pac-Man)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Press Start 2P', monospace;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 { font-size: 20px; color: #58a6ff; margin-bottom: 5px; }
+        .score-board { font-size: 14px; margin-bottom: 15px; color: #8b949e; }
+        canvas {
+            border: 4px solid #30363d;
+            background-color: #161b22;
+            box-shadow: 0 0 20px rgba(35, 134, 54, 0.4);
+            max-width: 100%;
+            height: auto;
+        }
+        .controls { margin-top: 15px; font-size: 10px; color: #8b949e; }
+    </style>
+</head>
+<body>
+
+    <h1>🐙 GITHUB REPO MUNCHER</h1>
+    <div class="score-board">Skor: <span id="score">0</span> | Can: <span id="lives">3</span></div>
+
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+    <div class="controls">Yön Tuşları (Oklar / WASD) ile Octocat'i hareket ettir!</div>
+
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+let score = 0;
+let lives = 3;
+let repoDots = [];
+let pacman = { x: 200, y: 200, size: 14, speed: 3, dx: 0, dy: 0 };
+
+// YAML dosyasını okuma denemesi (Aynı dizindeki pacman.yml)
+async function loadYamlData() {
+    try {
+        const response = await fetch('pacman.yml');
+        if (response.ok) {
+            const text = await response.text();
+            console.log("pacman.yml başarıyla okundu:", text);
+            // Burada yaml içeriğini işleyebiliriz, şimdilik varsayılan dot'ları üretelim
+        }
+    } catch (e) {
+        console.log("pacman.yml okunamadı, varsayılan repolar yükleniyor.");
+    }
+    initDots();
+}
+
+function initDots() {
+    repoDots = [
+        { x: 50, y: 50, name: "repo-1" },
+        { x: 150, y: 50, name: "repo-2" },
+        { x: 250, y: 50, name: "repo-3" },
+        { x: 350, y: 50, name: "repo-4" },
+        { x: 50, y: 150, name: "config-yml" },
+        { x: 350, y: 150, name: "bug-fix" },
+        { x: 50, y: 250, name: "react-app" },
+        { x: 350, y: 250, name: "api-service" },
+        { x: 50, y: 350, name: "docs" },
+        { x: 150, y: 350, name: "script-py" },
+        { x: 250, y: 350, name: "portfolio" },
+        { x: 350, y: 350, name: "readme-md" }
+    ];
+}
+
+function update() {
+    pacman.x += pacman.dx;
+    pacman.y += pacman.dy;
+
+    // Sınır kontrolü
+    if (pacman.x < 15) pacman.x = 15;
+    if (pacman.x > canvas.width - 15) pacman.x = canvas.width - 15;
+    if (pacman.y < 15) pacman.y = 15;
+    if (pacman.y > canvas.height - 15) pacman.y = canvas.height - 15;
+
+    // Nokta toplama kontrolü
+    repoDots.forEach((dot, index) => {
+        let dist = Math.hypot(pacman.x - dot.x, pacman.y - dot.y);
+        if (dist < 20) {
+            repoDots.splice(index, 1);
+            score += 10;
+            document.getElementById('score').innerText = score;
+        }
+    });
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Repo dot'larını çiz
+    repoDots.forEach(dot => {
+        ctx.fillStyle = '#238636';
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, 6, 0, Math.PI * 2);
+        ctx.fill();
+        
+        ctx.fillStyle = '#8b949e';
+        ctx.font = '8px monospace';
+        ctx.fillText(dot.name, dot.x - 15, dot.y - 10);
+    });
+
+    // Octocat (Pac-man) çiz
+    ctx.fillStyle = '#f0f6fc';
+    ctx.beginPath();
+    ctx.arc(pacman.x, pacman.y, pacman.size, 0, Math.PI * 2);
+    ctx.fill();
+}
+
+function gameLoop() {
+    update();
+    draw();
+    requestAnimationFrame(gameLoop);
+}
+
+// Klavye Dinleyicisi
+window.addEventListener('keydown', e => {
+    switch(e.key) {
+        case 'ArrowUp':
+        case 'w':
+            pacman.dx = 0; pacman.dy = -pacman.speed; break;
+        case 'ArrowDown':
+        case 's':
+            pacman.dx = 0; pacman.dy = pacman.speed; break;
+        case 'ArrowLeft':
+        case 'a':
+            pacman.dx = -pacman.speed; pacman.dy = 0; break;
+        case 'ArrowRight':
+        case 'd':
+            pacman.dx = pacman.speed; pacman.dy = 0; break;
+    }
+});
+
+loadYamlData();
+gameLoop();
+</script>
+
+</body>
+</html>
